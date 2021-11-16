@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 {
-    'name': ".\odoo-dev\todo_app",
+    'name': "Todo App",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """Manage tasks""",
 
     'description': """
-        Long description of module's purpose
+        Todo App module for managing tasks:
     """,
 
     'author': "Ayoub Lahyaoui",
@@ -28,6 +26,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/todo_menu.xml',
+        'views/todo_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

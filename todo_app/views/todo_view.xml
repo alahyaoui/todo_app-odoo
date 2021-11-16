@@ -1,3 +1,20 @@
 <odoo>
-
+    <record model="ir.ui.view" id="task_form_view">
+        <field name="name">task.form</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <form string="Task Form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="user_id"/>
+                        <field name="active"/>
+                        <field name="date_deadline"/>
+                        <field name="teams_ids"/>
+                        <field name="is_done"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 </odoo>
