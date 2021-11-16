@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_.\odoo-dev\todo_app_.\odoo-dev\todo_app,.\odoo-dev\todo_app..\odoo-dev\todo_app,model_.\odoo-dev\todo_app_.\odoo-dev\todo_app,base.group_user,1,1,1,1
+access_todo_app,todo_app,model_todo_app,base.group_user,1,1,1,1

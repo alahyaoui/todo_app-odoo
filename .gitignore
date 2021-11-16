@@ -38,3 +38,5 @@ setup/win32/static/postgresql*.exe
 
 #My ignores
 odoo-src
+venv
+.idea
