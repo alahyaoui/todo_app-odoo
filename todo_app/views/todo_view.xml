@@ -30,4 +30,15 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="task_search_view">
+        <field name="name">task.search</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="active"/>
+                <field name="is_done"/>
+            </search>
+        </field>
+    </record>
+
 </odoo>
