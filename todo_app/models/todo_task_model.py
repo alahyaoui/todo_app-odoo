@@ -1,4 +1,5 @@
 from odoo import models, fields, api, exceptions
+import logging
 
 
 class TodoTask(models.Model):
@@ -13,16 +14,18 @@ class TodoTask(models.Model):
     user_id = fields.Many2one('res.users', string="Responsible")  # Rajouter val par defaut
     teams_ids = fields.Many2many('res.partner', string="Team")
 
-    # description = fields.Text()
+    _logger = logging.getLogger(__name__)
 
     def do_clear_done(self):
         for task in self:
             if task.active:
+                self._logger.debug("Set active to False.")
                 task.active = False
             else:
                 raise exceptions.Warning("Task already inactive.")
 
     def write(self, values):
         if 'active' not in values:
+            self._logger.debug("Set active to True.")
             values['active'] = True
         return super(TodoTask, self).write(values)
