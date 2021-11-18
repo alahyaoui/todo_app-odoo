@@ -22,7 +22,7 @@ class TodoTask(models.Model):
                 self._logger.debug("Set active to False.")
                 task.active = False
             else:
-                raise exceptions.Warning("Task already inactive.")
+                raise exceptions.Warning("Task already inactive cannot be set to inactive.")
 
     def write(self, values):
         if 'active' not in values:
