@@ -2,7 +2,7 @@ from odoo import models, fields, api
 
 
 class TodoTask(models.Model):
-    _name = 'todo.task'http://localhost:8069/web/image?model=res.users&id=7&field=image_128&unique=11162021194944
+    _name = 'todo.task'
 
     name = fields.Char(string="Task name", required=True)
     is_done = fields.Boolean(string="Is done")
