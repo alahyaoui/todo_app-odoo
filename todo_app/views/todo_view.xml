@@ -5,24 +5,29 @@
         <field name="arch" type="xml">
             <form string="Task Form">
                 <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="user_id"/>
-                        <field name="active"/>
-                        <field name="date_deadline"/>
-                        <field name="teams_ids"/>
-                        <field name="is_done"/>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="name"/>
+                            <field name="user_id"/>
+                            <field name="is_done"/>
+                            <field name="active"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="date_deadline"/>
+                            <field name="teams_ids" widget="many2many_tags"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
+
     <record model="ir.ui.view" id="task_tree_view">
         <field name="name">task.tree</field>
         <field name="model">todo.task</field>
         <field name="arch" type="xml">
-            <tree string="Course Tree">
+            <tree string="Course Tree" decoration-muted="is_done==True">
                 <field name="name"/>
                 <field name="date_deadline"/>
                 <field name="is_done"/>
@@ -35,8 +40,9 @@
         <field name="model">todo.task</field>
         <field name="arch" type="xml">
             <search>
-                <field name="active"/>
-                <field name="is_done"/>
+                <field name="user_id"/>
+                <filter string="Not Done" name="filter_not_done" domain="[('is_done','=',False)]"/>
+                <filter string="Done" name="filter_done" domain="[('is_done','=!',False)]"/>
             </search>
         </field>
     </record>
