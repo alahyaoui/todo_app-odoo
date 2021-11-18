@@ -1,8 +1,8 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class TodoTask(models.Model):
-    _name = 'todo.task'
+    _name = 'todo.task'http://localhost:8069/web/image?model=res.users&id=7&field=image_128&unique=11162021194944
 
     name = fields.Char(string="Task name", required=True)
     is_done = fields.Boolean(string="Is done")
@@ -13,4 +13,10 @@ class TodoTask(models.Model):
     user_id = fields.Many2one('res.users', string="Responsible")  # Rajouter val par defaut
     teams_ids = fields.Many2many('res.partner', string="Team")
 
-    #description = fields.Text()
+    # description = fields.Text()
+
+    def do_clear_done(self):
+        # self.active = False
+        # self.is_done = True
+        self.write({'active': False})
+        self.write({'is_done': True})
