@@ -12,7 +12,7 @@ class TodoTask(models.Model):
 
     # Demander au prof
     user_id = fields.Many2one('res.users', string="Responsible")  # Rajouter val par defaut
-    teams_ids = fields.Many2many('res.partner', string="Team")
+    team_ids = fields.Many2many('res.partner', string="Team")
 
     _logger = logging.getLogger(__name__)
 
@@ -29,3 +29,6 @@ class TodoTask(models.Model):
             self._logger.debug("Set active to True.")
             values['active'] = True
         return super(TodoTask, self).write(values)
+
+    def __str__(self):
+        return f"Task(id={self.id}, name={self.name}, is_done={self.is_done}, active={self.active}, data_deadline={self.date_deadline}, user_name={self.user_id.name}, team_count={len(self.team_ids)}"
