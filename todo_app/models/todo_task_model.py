@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 
 
 class TodoTask(models.Model):
@@ -16,7 +16,13 @@ class TodoTask(models.Model):
     # description = fields.Text()
 
     def do_clear_done(self):
-        # self.active = False
-        # self.is_done = True
-        self.write({'active': False})
-        self.write({'is_done': True})
+        for task in self:
+            if task.active:
+                task.active = False
+            else:
+                raise exceptions.Warning("Task already inactive.")
+
+    def write(self, values):
+        if 'active' not in values:
+            values['active'] = True
+        return super(TodoTask, self).write(values)
