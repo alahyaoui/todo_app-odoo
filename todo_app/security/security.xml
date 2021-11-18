@@ -1,5 +1,4 @@
 <odoo>
-    <!-- Création d'un groupe d'utilisateur -->
 	<record id="carton_caracters" model="res.groups">
 	    <field name="name">Cartoon manager</field>
 	</record>
