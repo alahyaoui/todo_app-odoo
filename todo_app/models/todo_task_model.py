@@ -10,8 +10,7 @@ class TodoTask(models.Model):
     active = fields.Boolean(string="Is active", default=True)
     date_deadline = fields.Date(string="Deadline date")
 
-    # Demander au prof
-    user_id = fields.Many2one('res.users', string="Responsible")  # Rajouter val par defaut
+    user_id = fields.Many2one('res.users', string="Responsible", default=lambda s: s.env.user)
     team_ids = fields.Many2many('res.partner', string="Team")
 
     _logger = logging.getLogger(__name__)
