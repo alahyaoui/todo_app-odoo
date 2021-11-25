@@ -11,4 +11,26 @@
             </tree>
         </field>
     </record>
+
+    <record model="ir.ui.view" id="task_search_view">
+        <field name="name">task.search</field>
+        <field name="priority">15</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id"/>
+
+                <!-- "Filters" filters -->
+                <filter string="Not Done" name="filter_not_done" domain="[('is_done','=',False)]"/>
+                <filter string="Done" name="filter_done" domain="[('is_done','=',True)]"/>
+
+                <filter string="Active" name="filter_active" domain="[('active','=',True)]"/>
+                <filter string="Not Active" name="filter_not_active" domain="[('active','=',False)]"/>
+
+                <!-- "Group By" filters -->
+                <filter string="Responsible" name="responsible_id" context="{'group_by':'user_id'}"/>
+            </search>
+        </field>
+    </record>
+
 </odoo>
