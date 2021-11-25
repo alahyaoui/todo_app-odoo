@@ -1,0 +1,14 @@
+<odoo>
+    <record id="task_tree_view" model="ir.ui.view">
+        <field name="name">To−do Task Tree</field>
+        <field name="priority">15</field>
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="is_done==True" delete="false">
+                <field name="name"/>
+                <field name="date_deadline"/>
+                <field name="is_done"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
