@@ -6,6 +6,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-
+    <menuitem id="tags_menu" action="tags_list_action" parent="todo_app.todo_configuration_menu"/>
 
 </odoo>
