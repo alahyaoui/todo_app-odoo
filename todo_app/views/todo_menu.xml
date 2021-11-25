@@ -6,9 +6,18 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="contact_list_action">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
     <menuitem id="main_todo_app_menu" name="Todos">
-        <menuitem id="todo_app_menu" name="Todos">
+        <menuitem id="todo_task_menu" name="Todos">
             <menuitem id="tasks_menu" action="tasks_list_action"/>
+        </menuitem>
+        <menuitem id="todo_configuration_menu" name="Configuration">
+            <menuitem id="contact_menu" name="Contacts" action="contact_list_action"/>
         </menuitem>
     </menuitem>
 </odoo>
