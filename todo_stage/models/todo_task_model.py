@@ -11,3 +11,12 @@ class TodoTask(models.Model):
     date_created = fields.Datetime(string="Creation Date and Time", default=lambda self: fields.datetime.now())
     image = fields.Binary('Task Image')
     tag_ids = fields.Many2many('todo.task.tag', string="Tags")
+
+    def do_open(self):
+        self.state = 'open'
+
+    def do_close(self):
+        self.state = 'done'
+
+    def do_reset(self):
+        self.state = 'draft'

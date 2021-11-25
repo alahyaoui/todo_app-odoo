@@ -7,6 +7,10 @@
             <form>
                 <header>
                     <button name="do_clear_done" type="object" string="Clear Done"/>
+                    <button name="do_open" type="object" string="Set to open" attrs="{'invisible': [('state','!=','draft')]}"/>
+                    <button name="do_close" type="object" string="Set to closed" attrs="{'invisible': [('state','!=','open')]}"/>
+                    <button name="do_reset" type="object" string="Reset" attrs="{'invisible': [('state','=','draft')]}"/>
+                    <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
