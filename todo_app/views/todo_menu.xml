@@ -6,8 +6,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="main_todo_app_menu" name="Todo App">
-        <menuitem id="todo_app_menu" name="Todo App">
+    <menuitem id="main_todo_app_menu" name="Todos">
+        <menuitem id="todo_app_menu" name="Todos">
             <menuitem id="tasks_menu" action="tasks_list_action"/>
         </menuitem>
     </menuitem>

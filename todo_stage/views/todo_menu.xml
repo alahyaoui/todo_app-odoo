@@ -1,0 +1,11 @@
+<odoo>
+
+    <record id="tags_list_action" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">todo.task.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+</odoo>

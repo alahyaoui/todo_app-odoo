@@ -4,6 +4,7 @@ import logging
 
 class TodoTask(models.Model):
     _name = 'todo.task'
+    _description = 'To-do Task'
 
     name = fields.Char(string="Task name", required=True)
     is_done = fields.Boolean(string="Is done", default=False)
