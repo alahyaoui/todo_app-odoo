@@ -47,7 +47,6 @@
                             <field name="docs" widget="html"/>
                         </page>
                     </notebook>
-
                 </sheet>
             </form>
         </field>
@@ -86,5 +85,16 @@
             </search>
         </field>
     </record>
+
+    <record model="ir.ui.view" id="task_calendar_calendar" >
+        <field name="model">todo.task</field>
+        <field name="arch" type="xml">
+            <calendar date_start="date_deadline" color="user_id">
+                <field name="name"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
 
 </odoo>

@@ -8,4 +8,9 @@
 
     <menuitem id="tags_menu" action="tags_list_action" parent="todo_app.todo_configuration_menu"/>
 
+
+    <record id="todo_app.tasks_list_action" model="ir.actions.act_window">
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
 </odoo>
